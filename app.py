@@ -28,3 +28,6 @@ def plot():
             label = model_app(filepath)
             return render_template('home.html', filename=filename, output = label)
     return render_template('EDA.html')
+if __name__ == '__main__':
+    load_model()  # load model at the beginning once only
+    app.run(host='0.0.0.0', port=80)
