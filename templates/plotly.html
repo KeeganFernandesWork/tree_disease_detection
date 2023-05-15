@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plotly Graphs with Flask</title>
+    <!-- Plotly.js CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <div id="plot"></div>
+    
+    <!-- Flask variable to pass data to JavaScript -->
+    <script>
+      var data = {{ graph_data | safe }};
+      
+      // Create Plotly graph
+      Plotly.newPlot('plot', data);
+    </script>
+  </body>
+</html>
+

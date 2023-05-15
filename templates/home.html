@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+{% block content %}
+  <h1 class='content_h'>Plant Disease Detection</h1>
+  <p class = 'content_p'>Upload a Image of the Plant</p>
+      <form class = 'form-container' method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+  {% if filename %}
+    <h2 class='content_h'>File Uploaded: {{ filename }}</h2>
+    <div class = "img-container">
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+    </div>
+    {% endif %}
+  {% if output %}
+    <p class = 'content_p'>Model Output:</p>
+    <p class = 'content_p'>{{ output }}</p>
+  {% endif %}
+  </br>
+  <h1 class = 'content_h'>Breaking the System</h1>
+{% endblock %}
+

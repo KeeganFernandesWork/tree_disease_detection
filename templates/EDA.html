@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Exploratory Data Analysis{% endblock %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+{% block content %}
+  <h1 class="content_h">Exploratory Data Analysis</h1>
+  
+  <div class="plot-container">
+    <!-- Place your plots here -->
+    <!-- Example plot using Plotly -->
+    <div id="plot1" class="plot"></div>
+  </div>
+  
+  <div class="inference-container">
+    <h2>Inferences:</h2>
+    <!-- Write your inferences here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida sem sit amet sagittis fringilla.</p>
+  </div>
+{% endblock %}
+
